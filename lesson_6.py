@@ -1,7 +1,7 @@
 import random
 
 print("Task 1 Посчитать количество 9 в списке.")
-list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+list_1 = list(range(1,10))
 nine = 0 
 print("index in loop for")
 for item in list_1:
@@ -85,9 +85,7 @@ else:
 print("Task 5 Посчитать факториал для введенного пользователем числа")
 integer_user = int(input(" введите число :"))
 pc_int=1
-print(range(integer_user + 1))
 for item in range(integer_user + 1):
-    print(item)
     if item > 0:
         pc_int *= item
 print(f"факториал от числа {integer_user}  = {pc_int}")
@@ -150,6 +148,22 @@ for item_i in range(n):
     for item_j in range(n):
         print(d[item_i][item_j], end= " ")    
     print("")
+print("""10 Make a program that generates a list that has all squared values of integers from 1 to 100, i.e., like this: [1, 4, 9, 16, 25, 36, …, 10000] """)
+list_all_squared = [i * i for i in range(1,100)]
+print(list_all_squared)
 
+print("""11 Task Make a program that prompts the user to input the name of a car, the program should save the input in a list and ask for another, and then another, until the user inputs ‘q’, then the program should stop and the list of cars that was produced should be printed.""")
+list_vs_car = []
+while True:
+    print("for the quit the program enter \'q\'")
+    list_vs_car.append(input("input the name of a car :"))
+    if list_vs_car[-1] == "q":
+        break
+#print(list_vs_car)
+print (", ".join(map(str, list_vs_car)))
 
-
+print(""" Task 12 Start of with any list containing at least 10 elements, then print all elements in reverse order.""")
+list_task_12 = list(range(1,10))
+print(list_task_12)
+list_task_12.reverse()
+print(list_task_12)
