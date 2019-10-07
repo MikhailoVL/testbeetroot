@@ -77,22 +77,79 @@ if len(pasword) >=10:
         if item.isupper():
             mega_alfa = True
     if didg == 5 and mega_alfa:
-        print("Your password is strong.")
+        print("-Your password is strong.")
 else:
-    print("Your password is not strong enough.")
+    print("-Your password is not strong enough.")
 
 
 print("Task 5 Посчитать факториал для введенного пользователем числа")
 integer_user = int(input(" введите число :"))
 pc_int=1
-for item in range(integer_user):
-    pc_int *= item
-print(pc_int)
+print(range(integer_user + 1))
+for item in range(integer_user + 1):
+    print(item)
+    if item > 0:
+        pc_int *= item
+print(f"факториал от числа {integer_user}  = {pc_int}")
+
+print ("""Task 6 С помощью random сгенерировать 2 целых числа и спросить у пользователя ответ суммы этих чисел. Если пользователь посчитал верно то засчитать ему одно очко. Повторять пока пользователь не введет ‘q’.""")
+result_user = 0
+while True:
+    f_random_int_task_6 = random.randint(1,100)
+    s_random_int_task_6 = random.randint(1,100)
+    print(f"Напишите сумму двух чисел : {f_random_int_task_6} + {s_random_int_task_6}")
+    input_6 = input("Enter result or \'q\' for exit :")
+    if input_6 == "q":
+        break
+    elif int(input_6) == (f_random_int_task_6 + s_random_int_task_6):
+        result_user += 1
+        print(f"your result : {result_user}")
+    else:
+        print("your enter not correct, try again")
 
 
+print("""Task 7  Вывести последовательность Коллатца для числа введенного пользователем. Остановится когда число достигнет 1""")
+user_input_7 = int(input('Enter: '))
 
+list_kolatza = [user_input_7]
+i = 0
 
+while list_kolatza[i] != 1:
+    if list_kolatza[i] % 2 == 0:
+        list_kolatza.append(list_kolatza[i] // 2)
+    else:
+        list_kolatza.append(list_kolatza[i] * 3 + 1)
+    i += 1
+print(list_kolatza)
 
+print(" Task 8 Вывести последовательность Фибоначчи где количество элементов последовательности задается пользователем")
+
+user_input_iteration = int(input("Enter count fibonacci"))
+list_fibonacci = []
+for i in range(user_input_iteration):
+   # print(str(i) + "my count")
+    if i >4 :
+        list_fibonacci.append(list_fibonacci[i-1]+list_fibonacci[i-2])
+    elif i > 1 and i <=4:
+        list_fibonacci.append(i-1)
+    else:
+        list_fibonacci.append(i)
+print(list_fibonacci)
+
+print(""" Task 9 Дано нечетное число n. Создайте вложеный список из n×n элементов, заполнив его символами \".\"(каждый элемент массива является строкой из одного символа). Затем заполните символами "*" среднюю строку массива, средний столбец массива, главную диагональ и побочную диагональ. В результате должны образовывать изображение снежинки. Выведите полученный массив на экран, разделяя элементы массива пробелами.""")
+n = 9
+d = [["." for j in range(n)] for i in range(n)]
+
+for column in range(n):
+    for row in range(n):
+        if column == n // 2 or column==row or (row ==n//2) or row == n - column -1:
+            d[column][row] = "*"
+    
+
+for item_i in range(n):
+    for item_j in range(n):
+        print(d[item_i][item_j], end= " ")    
+    print("")
 
 
 
