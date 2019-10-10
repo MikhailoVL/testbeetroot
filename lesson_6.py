@@ -40,9 +40,9 @@ while i < len(list_2):
 
 print("""Task 3 Пользователь должен ввести последовательность чисел через пробел.Для каждого числа выведите слово YES (в отдельной строке), если это число ранее встречалось в последовательности или NO, если не встречалось.""")
 
-list_3 = list(input("введите последовательность чисел через пробел").split())
+list_3 = input("введите последовательность чисел через пробел").split()
 
-print("print my list task loop for : " + str(list_3))
+print("print my list task loop for : " , list_3)
 
 i = 0
 a = set()
@@ -52,11 +52,12 @@ for item in list_3:
         a.add(item)
     else:
         print("Yes")
-print("print my list task loop while : " + str(list_3))
+print("print my list task loop while : " , list_3)
 
 
 a =set()
-while i < len(list_3):
+length_list_3 = len(list_3)
+while i < length_list_3:
     if list_3[i] not in a:
         print( "No")
         a.add(list_3[i])
@@ -85,9 +86,8 @@ else:
 print("Task 5 Посчитать факториал для введенного пользователем числа")
 integer_user = int(input(" введите число :"))
 pc_int=1
-for item in range(integer_user + 1):
-    if item > 0:
-        pc_int *= item
+for item in range(1, integer_user + 1):
+    pc_int *= item
 print(f"факториал от числа {integer_user}  = {pc_int}")
 
 print ("""Task 6 С помощью random сгенерировать 2 целых числа и спросить у пользователя ответ суммы этих чисел. Если пользователь посчитал верно то засчитать ему одно очко. Повторять пока пользователь не введет ‘q’.""")
@@ -138,6 +138,10 @@ print(""" Task 9 Дано нечетное число n. Создайте вло
 n = 9
 d = [["." for j in range(n)] for i in range(n)]
 
+#column == n // 2 - выводит средину по горизонтали
+#column==row - диагональ с лева на право
+# (row ==n//2) - вертикаль
+# row == n - column -1: - диагональ с права на лево
 for column in range(n):
     for row in range(n):
         if column == n // 2 or column==row or (row ==n//2) or row == n - column -1:
@@ -156,9 +160,10 @@ print("""11 Task Make a program that prompts the user to input the name of a car
 list_vs_car = []
 while True:
     print("for the quit the program enter \'q\'")
-    list_vs_car.append(input("input the name of a car :"))
     if list_vs_car[-1] == "q":
         break
+    else:
+        list_vs_car.append(input("input the name of a car :"))
 #print(list_vs_car)
 print (", ".join(map(str, list_vs_car)))
 
