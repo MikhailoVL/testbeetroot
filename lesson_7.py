@@ -82,10 +82,9 @@ print(user_input_task_6_1)
 print("Task 7 Дан список чисел от 1 до 31, обозначающий дни в месяце. Вывести список только рабочих дней месяца без выходных.(с помощью списковых включений)")
 
 user_input_task_7 = list(range(1,31))
-
-user_input_task_7_1 = [x for x in user_input_task_6 if x % 2]
-
-print(user_input_task_6_1)
+# x+1 == 6 + 1 -> число 7 у нас все время срабатывает, имитируем 7ку 
+user_input_task_7_1 = [x for x in user_input_task_7 if x % 7 != 0 if (x+1) % 7 != 0  ]
+print(user_input_task_7_1)
 
 print("Task 8 Генерируется квадратная матрица (с помощью списковых включений). Найти сумма элементов ее главной и побочной диагоналей.")
 
@@ -123,6 +122,26 @@ for name in range(famely):
     famely_list[name_r] = input("Enter age relative :")
     
 print(famely_list)
+
+
+print("Task 10 необходимо объединить два прайс-листа (задаются в виде словарей) с тем условием, что если наименование товара присутствует в обоих прайсах, то в итоговый прайс помещается тот, чья цена выше. (с помощью списковых включений)")
+
+dict_10_1 = {"apple" : 10, "carrot" : 20, "peach" : 23, "banana" : 34}
+dict_10_2 ={"pear" : 12, "plum" : 34, "cherry" : 22, "banana" : 34}
+
+dict_10_3 = {key, value for key, valye in [dict_10_1.items(), dict_10_2items()] if d in }
+
+for d in [dict_10_1, dict_10_2]:
+   if 
+
+
+
+
+
+
+
+
+
     
 
 
