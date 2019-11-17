@@ -124,20 +124,19 @@ for name in range(famely):
 print(famely_list)
 
 
-print("Task 10 необходимо объединить два прайс-листа (задаются в виде словарей) с тем условием, что если наименование товара присутствует в обоих прайсах, то в итоговый прайс помещается тот, чья цена выше. (с помощью списковых включений)")
+print("Task 10 необходимо объединить два прайс-листа (задаются в виде словарей) с тем условием, что если наименование товара присутствует в обоих прайсах, то в итоговый прайс помещается тот, чья цена выше. (с помощью comprehensions)")
 
 dict_10_1 = {"apple" : 10, "carrot" : 20, "peach" : 23, "banana" : 34}
 dict_10_2 ={"pear" : 12, "plum" : 34, "cherry" : 22, "banana" : 34}
+d = {}
 
-dict_10_3 = {key, value for key, valye in [dict_10_1.items(), dict_10_2items()] if d in }
-
-for d in [dict_10_1, dict_10_2]:
-   if 
-
-
-
+for key, value in dict_10_1.items():
+   value2 = dict_10_2.get(key)
+    if value2 and value2 > value:
+      d[key] = value2  
 
 
+d = {key: value for key, value in dict_10_1.items if dict_10_2.get(key) and dict_10_2[key] < value}
 
 
 
